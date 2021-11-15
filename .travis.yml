@@ -16,7 +16,7 @@ before_script:
 script:
   - docker --version # print the version for logging
   - docker build -t simple-express .
-  - docker tag simple-express higharc91/arc_kubernetes_exercise_simple-express:latest
+  - docker tag simple-express higharc91/arc_kubernetes_exercise_simple-express
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
