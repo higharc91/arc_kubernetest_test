@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: first-simple-express
+  labels:
+    app: first-simple-express
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: first-simple-express
+  template:
+    metadata:
+      labels:
+        app: first-simple-express
+    spec:
+      containers:
+        - name: first-simple-express
+          image: higharc91/arc_kubernetes_exercise_simple-express
+          ports:
+            - containerPort: 80
